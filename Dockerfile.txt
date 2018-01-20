@@ -1,0 +1,19 @@
+FROM ubuntu:16.04  
+
+RUN apt-get update
+RUN apt-get install apache2
+RUN apt-get install php libapache2-mod-php
+
+ADD www /var/www/site
+ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
+
+ADD ext/ixed.7.0.lin /usr/lib/php/20151012/ixed.7.0.lin
+
+RUN   echo "extension=ixed.7.0.lin" >> /etc/php/7.0/apache2/php.ini
+
+# Expose apache.
+
+EXPOSE 80
+
+CMD /usr/sbin/apache2ctl -D FOREGROUND
+
