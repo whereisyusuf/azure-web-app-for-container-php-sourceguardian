@@ -1,11 +1,12 @@
-# azure-web-app-for-container-php-sourceguardian
+# Enabling Source Guardian (or other similar) loaders in your PHP application on Azure App Service using docker containers
+
 Sample Azure Web App in PHP using Web App for Containers and Sourceguardian extension
 
 This repo contains sample index.php that is protected by SourceGuardian. If you try to open this locally, you will get a message to download and register SourceGuardian loaders. 
 
 The application files are saved in www folder, where as the extension files are stored in the ext folder. 
 
-##Local Docker Build
+## Local Docker Build
 
 To deploy, download the files to a local folder. Install docker and then run the following command to build your docker image
 
@@ -15,7 +16,7 @@ To run the container locally to validate use the docker run command as below and
 
 ``` docker run -p 8080:80 -d mysite ```
 
-##Push to Registry
+## Push to Registry
 
 Finally, you can push the docker image to your Azure Container Registry (or dockerhub). For this - login into the registry using the docker login command 
 
