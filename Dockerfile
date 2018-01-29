@@ -1,11 +1,11 @@
-#Take the ubuntu base image
+ #Take the ubuntu base image
 FROM ubuntu:16.04  
 
 #Install apache and php
 
 RUN apt-get update
-RUN apt-get install apache2
-RUN apt-get install php libapache2-mod-php
+RUN apt-get install apache2 -y
+RUN apt-get install php libapache2-mod-php -y
 
 #Copy all the files that are created for the project. 
 ADD www /var/www/site
